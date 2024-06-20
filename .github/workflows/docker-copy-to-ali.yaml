@@ -28,6 +28,7 @@ jobs:
     - name: Use Skopeo Tools Sync Image to Docker Hub mysql
       run: |
          skopeo copy docker://docker.io/library/mysql:8.0.33 docker://registry.cn-beijing.aliyuncs.com/wulan/mysql:8.0.33
+    
     - name: Use Skopeo Tools Sync Image to Docker Hub  redis
       run: |
          skopeo copy docker://docker.io/library/redis:7.0.12 docker://registry.cn-beijing.aliyuncs.com/wulan/redis:7.0.12
