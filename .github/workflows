@@ -1,0 +1,34 @@
+name: Sync Image to Aliyun  Example
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Git pull
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2.9.1
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2.2.0
+      with:
+        registry: registry.cn-hangzhou.aliyuncs.com
+        username: pengnz
+        password: 160014nuo
+        logout: false
+
+    - name: Use Skopeo Tools Sync Image to Docker Hub mysql
+      run: |
+         skopeo copy docker://docker.io/library/mysql:8.0.33 docker://registry.cn-beijing.aliyuncs.com/wulan/mysql:8.0.33
+    - name: Use Skopeo Tools Sync Image to Docker Hub  redis
+      run: |
+         skopeo copy docker://docker.io/library/redis:7.0.12 docker://registry.cn-beijing.aliyuncs.com/wulan/redis:7.0.12
+  
