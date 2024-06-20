@@ -28,7 +28,10 @@ jobs:
 
       - name: Use Skopeo Tools to Sync Images to Alibaba Cloud
         run: |
-          skopeo copy docker://docker.io/library/rabbitmq:3.8.34 docker://registry.cn-beijing.aliyuncs.com/wulan/rabbitmq:3.8.34
-          skopeo copy docker://docker.io/library/redis:6.2.14 docker://registry.cn-beijing.aliyuncs.com/wulan/redis:6.2.14
-          skopeo copy docker://docker.io/nacos/nacos-server:1.4.1 docker://registry.cn-beijing.aliyuncs.com/wulan/nacos-server:1.4.1
-          skopeo copy docker://docker.io/minio/minio:RELEASE.2022-09-07T22-25-02Z docker://registry.cn-beijing.aliyuncs.com/wulan/minio:RELEASE.2022-09-07T22-25-02Z
+          skopeo copy docker://docker.io/library/elasticsearch:7.12.1 docker://registry.cn-beijing.aliyuncs.com/wulan/elasticsearch:7.12.1
+          skopeo copy docker://docker.io/library/kibana:7.12.1 docker://registry.cn-beijing.aliyuncs.com/wulan/kibana:7.12.1
+          skopeo copy docker://docker.io/library/elasticsearch:7.12.1 docker://registry.cn-beijing.aliyuncs.com/wulan/elasticsearch:8.10.2
+          skopeo copy docker://docker.io/library/kibana:7.12.1 docker://registry.cn-beijing.aliyuncs.com/wulan/kibana:8.10.2
+          skopeo copy docker://docker.io/xuxueli/xxl-job-admin:2.3.1 docker://registry.cn-beijing.aliyuncs.com/wulan/xxl-job-admin:2.3.1
+          skopeo copy docker://docker.io/library/nginx:1.24.0 docker://registry.cn-beijing.aliyuncs.com/wulan/nginx:1.24.0
+          skopeo copy docker://docker.io/canal/canal-server:v1.1.1 docker://registry.cn-beijing.aliyuncs.com/wulan/canal-server:v1.1.1
